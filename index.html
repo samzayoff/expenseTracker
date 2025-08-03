@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="app-header">
+            <h1>Expense Tracker</h1>
+            <p class="app-subtitle">Track your spending effortlessly</p>
+        </div>
+
+        <div class="input-section">
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option value="" disabled selected>Select category</option>
+                        <option value="food">Food & Beverage</option>
+                        <option value="transport">Transportation</option>
+                        <option value="housing">Housing</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="utilities">Utilities</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" placeholder="0.00">
+                </div>
+
+                <div class="input-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date">
+                </div>
+            </div>
+
+            <button id="add-expense" class="primary-button">
+                <i class="fas fa-plus"></i> Add Expense
+            </button>
+        </div>
+
+        <div class="expenses-section">
+            <h2 class="section-title">
+                <i class="fas fa-receipt"></i> Recent Expenses
+            </h2>
+            <div class="expenses-table-container">
+                <table class="expenses-table" >
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th class="amount-column">Amount</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expense-table-body">
+                        <!-- Example row -->
+                        <tr>
+                            <td class="category-cell">
+                                <span class="category-tag housing">
+                                    <i class="fas fa-home"></i> Housing
+                                </span>
+                            </td>
+                            <td class="amount-cell">2000.00</td>
+                            <td class="date-cell">2025-08-20</td>
+                            <td class="action-cell">
+                                <button class="delete-btn" title="Delete">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- Additional example rows -->
+                        <tr>
+                            <td class="category-cell">
+                                <span class="category-tag food">
+                                    <i class="fas fa-utensils"></i> Food
+                                </span>
+                            </td>
+                            <td class="amount-cell">150.50</td>
+                            <td class="date-cell">2025-08-19</td>
+                            <td class="action-cell">
+                                <button class="delete-btn" title="Delete">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="category-cell">
+                                <span class="category-tag transport">
+                                    <i class="fas fa-car"></i> Transport
+                                </span>
+                            </td>
+                            <td class="amount-cell">75.30</td>
+                            <td class="date-cell">2025-08-18</td>
+                            <td class="action-cell">
+                                <button class="delete-btn" title="Delete">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="total-section">
+            <div class="total-label">Total Expenses</div>
+            <div class="total-amount" id="total-amount">2225.80</div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
